@@ -10,7 +10,7 @@ class Multimedia {
   }
 
   setInicio(time) {
-    console.log("debe recibir id y url y llamar a funcion interna");
+    this._url += `?start=${time}`;
   }
 }
 
@@ -26,7 +26,7 @@ class Reproductor extends Multimedia {
 
   PlayMultimedia() {
     const openVideo = document.querySelector(this.id);
-    openVideo.setAttribute('src', this.url);
+    openVideo.setAttribute("src", this.url);
   }
 }
 //llamar a los elementos del DOM
@@ -55,7 +55,7 @@ const videoSerie = new Reproductor(
 //evento click
 
 const clickMusic = document.querySelector("#headingOne");
-clickMusic.addEventListener('click', function () {
+clickMusic.addEventListener("click", function () {
   videoMusic.setInicio(7);
   videoMusic.PlayMultimedia();
 });
